@@ -3,6 +3,7 @@ package com.tati.classes_platform.api.dto.request;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,8 +27,13 @@ public class StudentRequest {
   @Email(message = "Not valid email")
   private String email;
 
-  @NotBlank(message = "Active status is required")
+  @NotNull(message = "Active status is required")
   @Schema(description = "Indicates if the class is active", example = "true")
   private Boolean isActive;
+
+  @NotNull(message = "ClassEntityId is required")
+  @Schema(description = "Id of the class entity", example = "1")
+  private Long ClassEntityId;
+
 
 }

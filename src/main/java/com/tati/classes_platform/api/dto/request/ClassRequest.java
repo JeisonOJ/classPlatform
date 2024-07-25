@@ -2,6 +2,7 @@ package com.tati.classes_platform.api.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,7 +25,7 @@ public class ClassRequest {
   @Schema(description = "Description of the class", example = "Maths is a class for maths")
   private String description;
 
-  @NotBlank(message = "Active status is required")
+  @NotNull(message = "Active status is required")
   @Schema(description = "Indicates if the class is active", example = "true")
   private Boolean isActive;
 

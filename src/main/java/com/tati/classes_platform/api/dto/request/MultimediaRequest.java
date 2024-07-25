@@ -26,8 +26,12 @@ public class MultimediaRequest {
   @Schema(description = "Type of the multimedia: VIDEO, AUDIO, DOCUMENT", example = "YOUTUBE")
   private Type type;
 
-  @NotBlank(message = "Active status is required")
+  @NotNull(message = "Active status is required")
   @Schema(description = "Indicates if the class is active", example = "true")
   private Boolean isActive;
+
+  @NotNull(message = "Lesson id is required")
+  @Schema(description = "Id of the class entity", example = "1")
+  private Long lessonId;
 
 }
