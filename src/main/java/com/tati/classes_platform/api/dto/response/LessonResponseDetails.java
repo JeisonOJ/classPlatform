@@ -28,5 +28,5 @@ public class LessonResponseDetails {
 
   private ClassResponse classEntity;
 
-  private List<MultimediaResponse> Multimedias;
+  private List<MultimediaResponse> multimedias;
 }

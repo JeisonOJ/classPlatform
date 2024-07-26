@@ -13,7 +13,7 @@ import com.tati.classes_platform.api.dto.response.StudentResponseDetails;
 import com.tati.classes_platform.api.dto.response.responseBasic.StudentResponse;
 import com.tati.classes_platform.domain.entities.Student;
 
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING, uses = { ClassMapper.class })
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface StudentMapper {
 
   StudentResponseDetails entityToResponseDetails(Student student);

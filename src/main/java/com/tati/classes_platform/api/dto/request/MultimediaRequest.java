@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Schema(description = "Multimedia")
 public class MultimediaRequest {
 
   @NotBlank(message = "Url is required")
@@ -23,15 +24,11 @@ public class MultimediaRequest {
   private String url;
 
   @NotNull(message = "Type is required")
-  @Schema(description = "Type of the multimedia: VIDEO, AUDIO, DOCUMENT", example = "YOUTUBE")
+  @Schema(description = "Type of the multimedia: VIDEO, AUDIO, DOCUMENT", example = "VIDEO")
   private Type type;
 
   @NotNull(message = "Active status is required")
   @Schema(description = "Indicates if the class is active", example = "true")
   private Boolean isActive;
-
-  @NotNull(message = "Lesson id is required")
-  @Schema(description = "Id of the class entity", example = "1")
-  private Long lessonId;
 
 }

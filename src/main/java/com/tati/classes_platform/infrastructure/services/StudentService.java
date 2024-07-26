@@ -45,7 +45,7 @@ public class StudentService implements IStudentService {
         .orElseThrow(() -> new BadIdException("Class not found"));
     Student student = studentMapper.requestToEntity(rq);
     student.setClassEntity(classEntity);
-    return studentMapper.entityToResponse(studentRepository.save(studentMapper.requestToEntity(rq)));
+    return studentMapper.entityToResponse(studentRepository.save(student));
   }
 
   @Override

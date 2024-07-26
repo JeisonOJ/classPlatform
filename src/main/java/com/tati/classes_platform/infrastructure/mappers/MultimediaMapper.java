@@ -13,7 +13,7 @@ import com.tati.classes_platform.api.dto.response.MultimediaResponseDetails;
 import com.tati.classes_platform.api.dto.response.responseBasic.MultimediaResponse;
 import com.tati.classes_platform.domain.entities.Multimedia;
 
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING, uses = { ClassMapper.class, LessonMapper.class })
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface MultimediaMapper {
 
   MultimediaResponseDetails entityToResponseDetails(Multimedia multimedia);
@@ -25,6 +25,8 @@ public interface MultimediaMapper {
       @Mapping(target = "lesson", ignore = true),
       @Mapping(target = "createdAt", ignore = true) })
   Multimedia requestToEntity(MultimediaRequest rq);
+
+  List<Multimedia> requestListToEntityList(List<MultimediaRequest> multimedias);
 
   MultimediaResponse entityToResponse(Multimedia multimedia);
 

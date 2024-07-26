@@ -1,5 +1,8 @@
 package com.tati.classes_platform.api.dto.request;
 
+import java.util.List;
+
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -32,4 +35,9 @@ public class LessonRequest {
   @NotNull(message = "ClassEntityId is required")
   @Schema(description = "Id of the class entity", example = "1")
   private Long ClassEntityId;
+
+  @NotNull(message = "multimedia is required")
+  @ArraySchema(schema = @Schema(description = "Multimedia request details", implementation = MultimediaRequest.class))
+  private List<MultimediaRequest> multimedias;
+
 }
